@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" width="240" height="360">
+  <defs>
+    <linearGradient id="giftGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C1F7C2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0E7E5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Card background -->
+  <rect width="240" height="360" fill="#FFFFFF" rx="16"/>
+  
+  <!-- Decorative border -->
+  <rect x="8" y="8" width="224" height="344" fill="none" stroke="#A0E7E5" stroke-width="3" rx="12"/>
+  
+  <!-- Central gift placeholder -->
+  <circle cx="120" cy="140" r="65" fill="url(#giftGradient2)" opacity="0.8"/>
+  <rect x="95" y="115" width="50" height="50" fill="#32CD32" rx="6"/>
+  <path d="M120 100 L120 115 M95 107.5 L145 107.5" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+  
+  <!-- Decorative sparkles around gift -->
+  <circle cx="75" cy="105" r="3" fill="#FFF1A8"/>
+  <circle cx="165" cy="110" r="2" fill="#B4A7F5"/>
+  <circle cx="80" cy="175" r="2" fill="#FF9AA2"/>
+  <circle cx="160" cy="170" r="3" fill="#FFF1A8"/>
+  
+  <!-- Gift label area -->
+  <rect x="25" y="220" width="190" height="90" fill="#FFF8DC" stroke="#A0E7E5" stroke-width="2" rx="8" opacity="0.9"/>
+  
+  <!-- Gift Title -->
+  <text x="120" y="240" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" font-weight="bold" fill="#32CD32">Howard Johnson Escobar</text>
+  
+  <!-- Gift Description -->
+  <text x="120" y="258" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">Spa completo para 2 personas</text>
+  <text x="120" y="270" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">Piscinas, hidromasajes, saunas</text>
+  <text x="120" y="282" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">+ Almuerzo completo</text>
+  <text x="120" y="294" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">Plato principal + postre + bebida</text>
+  
+  <!-- Card suit symbol (Cups - Spanish deck) -->
+  <path d="M35 25 Q30 18 25 25 Q30 38 35 32 Q40 38 45 25 Q40 18 35 25" fill="#A0E7E5" stroke="#32CD32" stroke-width="2"/>
+  <path d="M205 335 Q200 328 195 335 Q200 348 205 342 Q210 348 215 335 Q210 328 205 335" fill="#A0E7E5" stroke="#32CD32" stroke-width="2"/>
+  
+  <!-- Card number -->
+  <text x="35" y="55" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="#32CD32">2</text>
+  <text x="205" y="315" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="#32CD32" transform="rotate(180 205 315)">2</text>
+  
+  <!-- Decorative elements -->
+  <path d="M 30 65 Q 35 60 40 65" stroke="#A0E7E5" stroke-width="2" fill="none"/>
+  <path d="M 200 295 Q 205 290 210 295" stroke="#A0E7E5" stroke-width="2" fill="none"/>
+</svg> 

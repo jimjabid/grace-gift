@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" width="240" height="360">
+  <defs>
+    <linearGradient id="giftGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF9AA2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Card background -->
+  <rect width="240" height="360" fill="#FFFFFF" rx="16"/>
+  
+  <!-- Decorative border -->
+  <rect x="8" y="8" width="224" height="344" fill="none" stroke="#FF9AA2" stroke-width="3" rx="12"/>
+  
+  <!-- Central gift placeholder -->
+  <circle cx="120" cy="140" r="65" fill="url(#giftGradient1)" opacity="0.8"/>
+  <rect x="100" y="120" width="40" height="40" fill="#FF69B4" rx="6"/>
+  <path d="M120 105 L120 120 M100 112.5 L140 112.5" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+  
+  <!-- Decorative sparkles around gift -->
+  <circle cx="80" cy="110" r="3" fill="#FFF1A8"/>
+  <circle cx="160" cy="115" r="2" fill="#B4A7F5"/>
+  <circle cx="85" cy="170" r="2" fill="#A0E7E5"/>
+  <circle cx="155" cy="165" r="3" fill="#C1F7C2"/>
+  
+  <!-- Gift label area -->
+  <rect x="25" y="220" width="190" height="90" fill="#FFF8DC" stroke="#FF9AA2" stroke-width="2" rx="8" opacity="0.9"/>
+  
+  <!-- Gift Title -->
+  <text x="120" y="240" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" font-weight="bold" fill="#FF69B4">Delta Eco Hotel</text>
+  
+  <!-- Gift Description -->
+  <text x="120" y="258" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">Spa completo + traslado en lancha</text>
+  <text x="120" y="270" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">Piscina, jacuzzi, sauna, gimnasio</text>
+  <text x="120" y="282" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">Kayaks, minigolf y acceso</text>
+  <text x="120" y="294" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#4A4A6A">a humedales naturales</text>
+  
+  <!-- Card suit symbol (Coins - Spanish deck) -->
+  <circle cx="35" cy="35" r="15" fill="#FFF1A8" stroke="#FF9AA2" stroke-width="2"/>
+  <circle cx="205" cy="325" r="15" fill="#FFF1A8" stroke="#FF9AA2" stroke-width="2"/>
+  
+  <!-- Card number -->
+  <text x="35" y="42" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="#FF9AA2">1</text>
+  <text x="205" y="332" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="#FF9AA2" transform="rotate(180 205 332)">1</text>
+  
+  <!-- Decorative elements -->
+  <path d="M 30 60 Q 35 55 40 60" stroke="#FF9AA2" stroke-width="2" fill="none"/>
+  <path d="M 200 300 Q 205 295 210 300" stroke="#FF9AA2" stroke-width="2" fill="none"/>
+</svg> 
