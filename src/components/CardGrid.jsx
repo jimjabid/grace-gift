@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import Confetti from 'react-confetti';
-import Card from './Card';
+import React, { useState, useEffect } from "react";
+import Confetti from "react-confetti";
+import Card from "./Card";
 
 const CardGrid = ({ allowReplay = false }) => {
   const [activeCardId, setActiveCardId] = useState(null);
@@ -8,42 +8,44 @@ const CardGrid = ({ allowReplay = false }) => {
   const [showConfetti, setShowConfetti] = useState(false);
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
   });
 
   // New pastel confetti colors
-  const pastelColors = ['#C7E9F7', '#D7C8FF', '#FDFBFF', '#B4A7F5', '#BFE9FF'];
+  const pastelColors = ["#C7E9F7", "#D7C8FF", "#FDFBFF", "#B4A7F5", "#BFE9FF"];
 
   // Cards data
   const cards = [
     {
       id: 1,
-      backImage: '/card-back.svg',
-      frontImage: '/card-front-1.svg',
-      giftTitle: 'Delta Eco Hotel',
-      giftDescription: 'Spa completo + traslado en lancha + acceso a humedales naturales'
+      backImage: "./card-back.svg",
+      frontImage: "./card-front-1.svg",
+      giftTitle: "Delta Eco Hotel",
+      giftDescription:
+        "Spa completo + traslado en lancha + acceso a humedales naturales",
     },
     {
       id: 2,
-      backImage: '/card-back.svg',
-      frontImage: '/card-front-2.svg',
-      giftTitle: 'Howard Johnson Escobar',
-      giftDescription: 'Spa + almuerzo para 2 personas'
+      backImage: "./card-back.svg",
+      frontImage: "./card-front-2.svg",
+      giftTitle: "Howard Johnson Escobar",
+      giftDescription: "Spa + almuerzo para 2 personas",
     },
     {
       id: 3,
-      backImage: '/card-back.svg',
-      frontImage: '/card-front-3.svg',
-      giftTitle: 'Eforea - Hilton Pilar',
-      giftDescription: 'Experiencia de spa de lujo para 2 personas'
+      backImage: "./card-back.svg",
+      frontImage: "./card-front-3.svg",
+      giftTitle: "Eforea - Hilton Pilar",
+      giftDescription: "Experiencia de spa de lujo para 2 personas",
     },
     {
       id: 4,
-      backImage: '/card-back.svg',
-      frontImage: '/card-front-4.svg',
-      giftTitle: 'Carta Vacía',
-      giftDescription: 'Esta es una carta vacía solo para ver si la sacaste a la primera, sigue intentando'
-    }
+      backImage: "./card-back.svg",
+      frontImage: "./card-front-4.svg",
+      giftTitle: "Carta Vacía",
+      giftDescription:
+        "Esta es una carta vacía solo para ver si la sacaste a la primera, sigue intentando",
+    },
   ];
 
   // Handle window resize for confetti
@@ -51,19 +53,19 @@ const CardGrid = ({ allowReplay = false }) => {
     const handleResize = () => {
       setWindowDimensions({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleCardClick = (cardId) => {
     if (activeCardId === null) {
       // Flip the card
       setActiveCardId(cardId);
-      
+
       // Wait for flip animation to complete, then expand
       setTimeout(() => {
         setExpandedCardId(cardId);
@@ -76,7 +78,7 @@ const CardGrid = ({ allowReplay = false }) => {
     // Close expanded card
     setExpandedCardId(null);
     setShowConfetti(false);
-    
+
     // Reset active card if replay is allowed
     if (allowReplay) {
       setActiveCardId(null);
@@ -97,7 +99,7 @@ const CardGrid = ({ allowReplay = false }) => {
           initialVelocityY={20}
         />
       )}
-      
+
       {/* Cards grid */}
       <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
         {cards.map((card) => (
@@ -116,7 +118,7 @@ const CardGrid = ({ allowReplay = false }) => {
           />
         ))}
       </div>
-      
+
       {/* Instructions */}
       {activeCardId === null && (
         <div className="text-center mt-8 animate-pulse">
@@ -125,7 +127,7 @@ const CardGrid = ({ allowReplay = false }) => {
           </p>
         </div>
       )}
-      
+
       {/* Celebration message when card is expanded */}
       {expandedCardId && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
@@ -140,4 +142,4 @@ const CardGrid = ({ allowReplay = false }) => {
   );
 };
 
-export default CardGrid; 
+export default CardGrid;

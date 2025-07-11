@@ -1,23 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Custom keyframes for flip and zoom animation */
 @keyframes flipZoom {
-  0%   { transform: rotateY(0deg) scale(1); }
-  50%  { transform: rotateY(90deg) scale(1.1); }
-  100% { transform: rotateY(180deg) scale(1.35); }
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: rotateY(90deg) scale(1.1);
+  }
+  100% {
+    transform: rotateY(180deg) scale(1.35);
+  }
 }
 
 @keyframes flipZoomReverse {
-  0%   { transform: rotateY(180deg) scale(1.35); }
-  50%  { transform: rotateY(90deg) scale(1.1); }
-  100% { transform: rotateY(0deg) scale(1); }
+  0% {
+    transform: rotateY(180deg) scale(1.35);
+  }
+  50% {
+    transform: rotateY(90deg) scale(1.1);
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+  }
 }
 
 /* Card flip container */
@@ -91,12 +103,12 @@ body {
 .close-button {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
-  border: 2px solid #B4A7F5;
+  border: 2px solid #b4a7f5;
   transition: all 0.3s ease;
 }
 
 .close-button:hover {
-  background: #B4A7F5;
+  background: #b4a7f5;
   color: white;
   transform: scale(1.1);
 }
