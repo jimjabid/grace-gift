@@ -23,6 +23,7 @@ const CardGrid = ({ allowReplay = false }) => {
       giftTitle: "Delta Eco Hotel",
       giftDescription:
         "Spa completo + traslado en lancha + acceso a humedales naturales",
+      instagramUrl: "https://www.instagram.com/reel/DHrOITiyenV/?hl=es",
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const CardGrid = ({ allowReplay = false }) => {
       frontImage: "./card-front-2.svg",
       giftTitle: "Howard Johnson Escobar",
       giftDescription: "Spa + almuerzo para 2 personas",
+      instagramUrl: "https://www.instagram.com/reel/C6FIyR7vu18/?hl=es",
     },
     {
       id: 3,
@@ -37,6 +39,7 @@ const CardGrid = ({ allowReplay = false }) => {
       frontImage: "./card-front-3.svg",
       giftTitle: "Eforea - Hilton Pilar",
       giftDescription: "Experiencia de spa de lujo para 2 personas",
+      instagramUrl: "https://www.instagram.com/reel/DKP8j6WRDuL/?hl=es",
     },
     {
       id: 4,
@@ -45,6 +48,7 @@ const CardGrid = ({ allowReplay = false }) => {
       giftTitle: "Carta Vacía",
       giftDescription:
         "Esta es una carta vacía solo para ver si la sacaste a la primera, sigue intentando",
+      instagramUrl: null, // No Instagram link for empty card
     },
   ];
 
@@ -171,6 +175,7 @@ const CardGrid = ({ allowReplay = false }) => {
               frontImage={card.frontImage}
               giftTitle={card.giftTitle}
               giftDescription={card.giftDescription}
+              instagramUrl={card.instagramUrl}
               onCardClick={handleCardClick}
               onClose={handleCardClose}
               isFlipped={activeCardId === card.id}
