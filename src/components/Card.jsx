@@ -58,7 +58,7 @@ const Card = ({
           {/* Card Front */}
           <div className="card-face card-front">
             <div 
-              className="w-full h-full rounded-xl border-4 border-[#B4A7F5] shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden relative flex flex-col"
+              className="w-full h-full  shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden relative flex flex-col"
               style={isExpanded ? {
                 backgroundImage: `url(${frontImage})`,
                 backgroundSize: 'contain',
@@ -81,15 +81,8 @@ const Card = ({
                 <img 
                   src={frontImage} 
                   alt="Card front" 
-                  className="w-full h-3/4 object-cover"
+                  className="w-full  object-cover"
                 />
-              )}
-              
-              {/* Card placeholder when not expanded */}
-              {!isExpanded && (
-                <div className="w-24 h-24 mx-auto my-8 rounded-full bg-[#EFEAFE]/60 flex items-center justify-center">
-                  <span className="text-[#B4A7F5] text-2xl">🎁</span>
-                </div>
               )}
               
               {/* No HTML text overlay when expanded - image contains everything */}

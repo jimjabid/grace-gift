@@ -32,6 +32,91 @@ body {
   }
 }
 
+/* Spectacular Shuffle Animations */
+@keyframes shuffleDance1 {
+  0% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+  10% { transform: translateX(50px) translateY(-30px) rotate(15deg) scale(1.1); }
+  20% { transform: translateX(-40px) translateY(40px) rotate(-10deg) scale(0.9); }
+  30% { transform: translateX(80px) translateY(-20px) rotate(25deg) scale(1.2); }
+  40% { transform: translateX(-60px) translateY(60px) rotate(-20deg) scale(0.8); }
+  50% { transform: translateX(120px) translateY(-40px) rotate(35deg) scale(1.3); }
+  60% { transform: translateX(-80px) translateY(30px) rotate(-30deg) scale(0.9); }
+  70% { transform: translateX(40px) translateY(-50px) rotate(20deg) scale(1.1); }
+  80% { transform: translateX(-20px) translateY(20px) rotate(-15deg) scale(0.95); }
+  90% { transform: translateX(10px) translateY(-10px) rotate(5deg) scale(1.05); }
+  100% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+}
+
+@keyframes shuffleDance2 {
+  0% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+  10% { transform: translateX(-60px) translateY(40px) rotate(-20deg) scale(1.2); }
+  20% { transform: translateX(70px) translateY(-30px) rotate(25deg) scale(0.8); }
+  30% { transform: translateX(-50px) translateY(50px) rotate(-15deg) scale(1.3); }
+  40% { transform: translateX(90px) translateY(-60px) rotate(30deg) scale(0.9); }
+  50% { transform: translateX(-100px) translateY(20px) rotate(-35deg) scale(1.1); }
+  60% { transform: translateX(60px) translateY(-40px) rotate(20deg) scale(1.2); }
+  70% { transform: translateX(-30px) translateY(30px) rotate(-10deg) scale(0.9); }
+  80% { transform: translateX(25px) translateY(-25px) rotate(15deg) scale(1.05); }
+  90% { transform: translateX(-15px) translateY(15px) rotate(-5deg) scale(0.98); }
+  100% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+}
+
+@keyframes shuffleDance3 {
+  0% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+  10% { transform: translateX(45px) translateY(60px) rotate(18deg) scale(0.9); }
+  20% { transform: translateX(-80px) translateY(-25px) rotate(-22deg) scale(1.3); }
+  30% { transform: translateX(110px) translateY(35px) rotate(40deg) scale(0.8); }
+  40% { transform: translateX(-45px) translateY(-55px) rotate(-18deg) scale(1.2); }
+  50% { transform: translateX(75px) translateY(45px) rotate(28deg) scale(0.85); }
+  60% { transform: translateX(-90px) translateY(-15px) rotate(-32deg) scale(1.15); }
+  70% { transform: translateX(35px) translateY(25px) rotate(12deg) scale(1.1); }
+  80% { transform: translateX(-25px) translateY(-35px) rotate(-8deg) scale(0.95); }
+  90% { transform: translateX(15px) translateY(10px) rotate(4deg) scale(1.02); }
+  100% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+}
+
+@keyframes shuffleDance4 {
+  0% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+  10% { transform: translateX(-75px) translateY(-45px) rotate(-25deg) scale(1.1); }
+  20% { transform: translateX(55px) translateY(65px) rotate(20deg) scale(0.9); }
+  30% { transform: translateX(-95px) translateY(25px) rotate(-35deg) scale(1.25); }
+  40% { transform: translateX(85px) translateY(-55px) rotate(30deg) scale(0.85); }
+  50% { transform: translateX(-65px) translateY(45px) rotate(-20deg) scale(1.2); }
+  60% { transform: translateX(105px) translateY(-25px) rotate(38deg) scale(0.8); }
+  70% { transform: translateX(-45px) translateY(35px) rotate(-15deg) scale(1.05); }
+  80% { transform: translateX(30px) translateY(-20px) rotate(10deg) scale(1.1); }
+  90% { transform: translateX(-10px) translateY(8px) rotate(-3deg) scale(0.98); }
+  100% { transform: translateX(0px) translateY(0px) rotate(0deg) scale(1); }
+}
+
+/* Shuffle Animation Classes */
+.shuffle-card-1 {
+  animation: shuffleDance1 2.5s ease-in-out;
+}
+
+.shuffle-card-2 {
+  animation: shuffleDance2 2.5s ease-in-out;
+}
+
+.shuffle-card-3 {
+  animation: shuffleDance3 2.5s ease-in-out;
+}
+
+.shuffle-card-4 {
+  animation: shuffleDance4 2.5s ease-in-out;
+}
+
+/* Shuffle container effects */
+@keyframes shuffleContainer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.shuffle-container {
+  animation: shuffleContainer 2.5s ease-in-out;
+}
+
 /* Card flip container */
 .card-flip-container {
   perspective: 1200px;

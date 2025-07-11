@@ -14,8 +14,8 @@ const CardGrid = ({ allowReplay = false }) => {
   // New pastel confetti colors
   const pastelColors = ["#C7E9F7", "#D7C8FF", "#FDFBFF", "#B4A7F5", "#BFE9FF"];
 
-  // Cards data
-  const cards = [
+  // Original cards data
+  const originalCards = [
     {
       id: 1,
       backImage: "./card-back.svg",
@@ -48,6 +48,38 @@ const CardGrid = ({ allowReplay = false }) => {
     },
   ];
 
+  // State for shuffled cards
+  const [cards, setCards] = useState([]);
+  const [isShuffling, setIsShuffling] = useState(false);
+  const [shuffleAnimations, setShuffleAnimations] = useState({});
+
+  // Shuffle function with spectacular animations
+  const shuffleCards = () => {
+    setIsShuffling(true);
+    
+    // Reset all states when shuffling
+    setActiveCardId(null);
+    setExpandedCardId(null);
+    setShowConfetti(false);
+    
+    // Apply shuffle animations to each card
+    const animations = {};
+    originalCards.forEach((card, index) => {
+      animations[card.id] = `shuffle-card-${(index % 4) + 1}`;
+    });
+    setShuffleAnimations(animations);
+    
+    // Shuffle the cards array
+    const shuffled = [...originalCards].sort(() => Math.random() - 0.5);
+    setCards(shuffled);
+    
+    // Remove animations after they complete
+    setTimeout(() => {
+      setShuffleAnimations({});
+      setIsShuffling(false);
+    }, 2500);
+  };
+
   // Handle window resize for confetti
   useEffect(() => {
     const handleResize = () => {
@@ -59,6 +91,11 @@ const CardGrid = ({ allowReplay = false }) => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Shuffle cards on component mount
+  useEffect(() => {
+    shuffleCards();
   }, []);
 
   const handleCardClick = (cardId) => {
@@ -79,17 +116,15 @@ const CardGrid = ({ allowReplay = false }) => {
     setExpandedCardId(null);
     setShowConfetti(false);
 
-    // Reset active card if replay is allowed
-    if (allowReplay) {
-      setActiveCardId(null);
-    }
+    // Reset active card to allow re-selection
+    setActiveCardId(null);
   };
 
   return (
     <div className="container mx-auto px-4 py-8 w-full">
       {/* Confetti effect with new pastel colors */}
       {showConfetti && (
-        <Confetti
+        <Confetti className="z-1000"
           width={windowDimensions.width}
           height={windowDimensions.height}
           numberOfPieces={200}
@@ -100,30 +135,66 @@ const CardGrid = ({ allowReplay = false }) => {
         />
       )}
 
+      {/* Shuffle Button */}
+      <div className="flex justify-center mb-6">
+        <button
+          onClick={shuffleCards}
+          disabled={isShuffling || activeCardId !== null}
+          className={`
+            px-6 py-3 rounded-full font-semibold font-['Poppins'] text-white
+            bg-gradient-to-r from-[#B4A7F5] to-[#C7E9F7] 
+            hover:from-[#A391E6] hover:to-[#B4D6F2] 
+            shadow-[0_4px_20px_rgba(0,0,0,0.1)] 
+            transition-all duration-300 transform hover:scale-105
+            ${isShuffling || activeCardId !== null ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+          `}
+        >
+          {isShuffling ? '🔄 Barajando...' : '🎲 Barajar Cartas'}
+        </button>
+      </div>
+
       {/* Cards grid */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
+      <div className={`flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10 transition-all duration-500 ${isShuffling ? 'shuffle-container' : ''}`}>
         {cards.map((card) => (
-          <Card
+          <div
             key={card.id}
-            id={card.id}
-            backImage={card.backImage}
-            frontImage={card.frontImage}
-            giftTitle={card.giftTitle}
-            giftDescription={card.giftDescription}
-            onCardClick={handleCardClick}
-            onClose={handleCardClose}
-            isFlipped={activeCardId === card.id}
-            isExpanded={expandedCardId === card.id}
-            isDisabled={activeCardId !== null && activeCardId !== card.id}
-          />
+            className={`${shuffleAnimations[card.id] || ''} ${isShuffling ? 'z-10' : 'z-0'}`}
+            style={{ 
+              transformOrigin: 'center',
+              position: 'relative',
+              zIndex: isShuffling ? 10 : 'auto'
+            }}
+          >
+            <Card
+              id={card.id}
+              backImage={card.backImage}
+              frontImage={card.frontImage}
+              giftTitle={card.giftTitle}
+              giftDescription={card.giftDescription}
+              onCardClick={handleCardClick}
+              onClose={handleCardClose}
+              isFlipped={activeCardId === card.id}
+              isExpanded={expandedCardId === card.id}
+              isDisabled={activeCardId !== null && activeCardId !== card.id}
+            />
+          </div>
         ))}
       </div>
 
       {/* Instructions */}
-      {activeCardId === null && (
+      {activeCardId === null && !isShuffling && (
         <div className="text-center mt-8 animate-pulse">
           <p className="text-[#4A4A6A] text-lg font-semibold drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] font-['Poppins']">
             ✨ Haz clic en una carta para revelar tu regalo sorpresa ✨
+          </p>
+        </div>
+      )}
+
+      {/* Shuffling message */}
+      {isShuffling && (
+        <div className="text-center mt-8 animate-bounce">
+          <p className="text-[#4A4A6A] text-lg font-semibold drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] font-['Poppins']">
+            🎲 ¡Las cartas están bailando! ¡Prepárate para tu sorpresa! 💃
           </p>
         </div>
       )}

@@ -8,29 +8,32 @@ const GreetingHeader = () => {
       
       <div className="space-y-4">
         <h1 className="text-4xl md:text-6xl font-extrabold text-[#553C8B] mb-4 drop-shadow-[0_1px_3px_rgba(255,255,255,0.8)] font-['Poppins'] tracking-wide">
-          ¡ Feliz cumpleaños <br /> Grace y Raul !
+          ¡ Feliz cumpleaños <br /> Grace  y Raul  !
         </h1>
         
         <div className="flex items-center justify-center gap-2 mb-6">
           <div className="w-8 h-8 bg-[#C7E9F7] rounded-full flex items-center justify-center">
-            <span className="text-[#553C8B] text-lg">🎁</span>
-          </div>
-          <div className="w-8 h-8 bg-[#B4A7F5] rounded-full flex items-center justify-center">
-            <span className="text-white text-lg">🎉</span>
+            <span className="text-[#553C8B] text-2xl">♋</span>
           </div>
           <div className="w-8 h-8 bg-[#D7C8FF] rounded-full flex items-center justify-center">
-            <span className="text-[#553C8B] text-lg">✨</span>
+            <span className="text-[#553C8B] text-2xl">➕</span>
           </div>
+          <div className="w-8 h-8 bg-[#B4A7F5] rounded-full flex items-center justify-center">
+            <span className="text-white text-2xl">♌️</span>
+          </div>
+
         </div>
         
         <p className="text-xl md:text-2xl text-[#4A4A6A] font-semibold drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] font-['Poppins'] max-w-2xl mx-auto leading-relaxed">
           Elige una carta para descubrir tu regalo sorpresa
+          <br />
+        <span className="text-2xl">👀</span> Ojo que hay una carta en blanco
         </p>
         
         <div className="mt-6 flex justify-center">
           <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 border border-[#B4A7F5]/30">
             <p className="text-[#4A4A6A] text-sm font-medium font-['Poppins']">
-              Preparado con amor especialmente para los dos💕
+              Hecho con amor de parte de Pame y Jabid 💕
             </p>
           </div>
         </div>
